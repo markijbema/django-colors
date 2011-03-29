@@ -72,6 +72,17 @@ def opposite(x):
         return hsv_to_hex(h, s, v)
 
 
+def contrast_color(x):
+    """Return foreground colors (either black or white) in contrast to the color you provide"""
+    x = hex_to_hsv(expand_hex(x))
+    h, l, s = cs.rgb_to_hls(int(x[0:2], 16)/255.0, int(x[2:4], 16)/255.0, int(x[4:6], 16)/255.0)
+    if l > 0.5:
+        return '000000'
+    else:
+        return 'ffffff'
+    
+    
+
 def short_hex(x):
     """Return shorthand hexadecimal code, ex: cc3300 -> c30"""
     t = list(x)
@@ -153,3 +164,4 @@ register.filter('short_hex',  short_hex)
 register.filter('hsv_to_hex', hsv_to_hex)
 register.filter('hex_to_hsv', hex_to_hsv)
 register.filter('hex_to_rgb', hex_to_rgb)
+register.filter('contrast_color', contrast_color)
