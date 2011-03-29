@@ -20,5 +20,6 @@ setup(
 #   data_files = data_files,
     url = 'http://code.google.com/p/django-colors/',
     packages = ['colors'],
+    include_package_data=True,
 )
 
