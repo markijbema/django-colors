@@ -74,13 +74,15 @@ def opposite(x):
 
 def contrast_color(x):
     """Return foreground colors (either black or white) in contrast to the color you provide"""
-    x = expand_hex(x)
-    h, l, s = cs.rgb_to_hls(int(x[0:2], 16)/255.0, int(x[2:4], 16)/255.0, int(x[4:6], 16)/255.0)
-    if l > 0.5:
+    try:
+        x = expand_hex(x)
+        h, l, s = cs.rgb_to_hls(int(x[0:2], 16)/255.0, int(x[2:4], 16)/255.0, int(x[4:6], 16)/255.0)
+        if l > 0.5:
+            return '000000'
+        else:
+            return 'ffffff'
+    except:
         return '000000'
-    else:
-        return 'ffffff'
-    
     
 
 def short_hex(x):
