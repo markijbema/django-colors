@@ -77,7 +77,7 @@ def contrast_color(x):
     try:
         x = expand_hex(x)
         h, l, s = cs.rgb_to_hls(int(x[0:2], 16)/255.0, int(x[2:4], 16)/255.0, int(x[4:6], 16)/255.0)
-        if l > 0.5:
+        if l > 0.45:
             return '000000'
         else:
             return 'ffffff'
