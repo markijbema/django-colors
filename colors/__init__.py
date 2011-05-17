@@ -5,7 +5,7 @@ VERSION = (0, 0, 3, 'alpha', 0)
 import os.path, re, colors
 
 def get_version():
-    return '0.0.3'
+    return '0.0.4'
     version = '%s.%s' % (VERSION[0], VERSION[1])
     if VERSION[2]:
         version = '%s.%s' % (version, VERSION[2])
